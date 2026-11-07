@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EduSphere - Admin Login</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="login-body">
+  <div class="login-card">
+    <div class="login-header">
+      <div class="brand-logo">
+        <!-- Graduation Cap SVG -->
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+          <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
+        </svg>
+      </div>
+      <h1>EduSphere</h1>
+      <p>Administrator Authentication</p>
+    </div>
+
+    <!-- Error message display if redirected with ?error=true -->
+    <div id="loginErrorAlert" class="login-error-alert" role="alert">
+      Invalid username or password. Please try again.
+    </div>
+
+    <!-- Logout message if redirected with ?logout=true -->
+    <div id="logoutAlert" class="login-error-alert" style="background-color: rgba(16, 185, 129, 0.15); border-color: rgba(16, 185, 129, 0.3); color: #6ee7b7;" role="status">
+      You have been successfully logged out.
+    </div>
+
+    <form action="/login" method="POST" id="loginForm">
+      <div class="form-group">
+        <label for="username" class="form-label">Username</label>
+        <input 
+          type="text" 
+          id="username" 
+          name="username" 
+          class="form-input" 
+          placeholder="admin" 
+          required 
+          autocomplete="username" 
+          autofocus
+        >
+      </div>
+
+      <div class="form-group">
+        <label for="password" class="form-label">Password</label>
+        <input 
+          type="password" 
+          id="password" 
+          name="password" 
+          class="form-input" 
+          placeholder="••••••••" 
+          required 
+          autocomplete="current-password"
+        >
+      </div>
+
+      <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 12px; padding: 12px;">
+        Sign In to EduSphere
+      </button>
+    </form>
+
+    <div class="login-footer-info">
+      EduSphere Student Management System &bull; Single-Port Spring Boot
+    </div>
+  </div>
+
+  <script>
+    // Inspect URL parameters for error or logout alerts
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.has('error')) {
+      const errorBox = document.getElementById('loginErrorAlert');
+      if (errorBox) errorBox.style.display = 'block';
+    }
+    if (urlParams.has('logout')) {
+      const logoutBox = document.getElementById('logoutAlert');
+      if (logoutBox) logoutBox.style.display = 'block';
+    }
+  </script>
+</body>
+</html>
