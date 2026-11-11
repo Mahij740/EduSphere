@@ -10,3 +10,4 @@ public class StudentNotFoundException extends RuntimeException {
         super(message);
     }
 }
+
