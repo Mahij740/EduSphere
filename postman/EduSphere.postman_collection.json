@@ -1,41 +1,11 @@
 {
   "info": {
-    "_postman_id": "edusphere-collection-uuid-2026",
+    "_postman_id": "84fa2b85-5e7e-459d-b470-f2fdc1e9ed0f",
     "name": "EduSphere Student Management API",
     "description": "Comprehensive Postman test collection for the EduSphere REST API with Spring Security Basic Authentication.",
-    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
-  },
-  "variable": [
-    {
-      "key": "baseUrl",
-      "value": "http://localhost:8080",
-      "type": "string"
-    },
-    {
-      "key": "adminUsername",
-      "value": "admin",
-      "type": "string"
-    },
-    {
-      "key": "adminPassword",
-      "value": "admin123",
-      "type": "string"
-    }
-  ],
-  "auth": {
-    "type": "basic",
-    "basic": [
-      {
-        "key": "username",
-        "value": "{{adminUsername}}",
-        "type": "string"
-      },
-      {
-        "key": "password",
-        "value": "{{adminPassword}}",
-        "type": "string"
-      }
-    ]
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "60014230",
+    "_collection_link": "https://go.postman.co/collection/60014230-84fa2b85-5e7e-459d-b470-f2fdc1e9ed0f?source=collection_link"
   },
   "item": [
     {
@@ -53,10 +23,16 @@
             ],
             "url": {
               "raw": "{{baseUrl}}/api/students",
-              "host": ["{{baseUrl}}"],
-              "path": ["api", "students"]
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "students"
+              ]
             }
-          }
+          },
+          "response": []
         },
         {
           "name": "2. Get Student By ID",
@@ -69,14 +45,32 @@
               }
             ],
             "url": {
-              "raw": "{{baseUrl}}/api/students/1",
-              "host": ["{{baseUrl}}"],
-              "path": ["api", "students", "1"]
+              "raw": "{{baseUrl}}/api/students/2",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "students",
+                "2"
+              ]
             }
-          }
+          },
+          "response": []
         },
         {
           "name": "3. Create Student (Success 201)",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "     pm.collectionVariables.set(\"studentId\", pm.response.json().id);"
+                ]
+              }
+            }
+          ],
           "request": {
             "method": "POST",
             "header": [
@@ -91,14 +85,25 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"name\": \"Marcus Vance\",\n  \"email\": \"marcus.vance@example.com\",\n  \"course\": \"Computer Science\",\n  \"age\": 22\n}"
+              "raw": "{\"name\":\"Marcus Vance\",\"email\":\"marcus.vance@example.com\",\"course\":\"Computer Science\",\"age\":22}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
             },
             "url": {
               "raw": "{{baseUrl}}/api/students",
-              "host": ["{{baseUrl}}"],
-              "path": ["api", "students"]
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "students"
+              ]
             }
-          }
+          },
+          "response": []
         },
         {
           "name": "4. Update Student (Success 200)",
@@ -116,14 +121,26 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"name\": \"Marcus Vance Updated\",\n  \"email\": \"marcus.updated@example.com\",\n  \"course\": \"Information Technology\",\n  \"age\": 23\n}"
+              "raw": "{\"name\":\"Marcus Vance Updated\",\"email\":\"marcus.updated@example.com\",\"course\":\"Information Technology\",\"age\":23}",
+              "options": {
+                "raw": {
+                  "language": "text"
+                }
+              }
             },
             "url": {
-              "raw": "{{baseUrl}}/api/students/1",
-              "host": ["{{baseUrl}}"],
-              "path": ["api", "students", "1"]
+              "raw": "{{baseUrl}}/api/students/{{studentId}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "students",
+                "{{studentId}}"
+              ]
             }
-          }
+          },
+          "response": []
         },
         {
           "name": "5. Delete Student (Success 204)",
@@ -131,11 +148,18 @@
             "method": "DELETE",
             "header": [],
             "url": {
-              "raw": "{{baseUrl}}/api/students/1",
-              "host": ["{{baseUrl}}"],
-              "path": ["api", "students", "1"]
+              "raw": "{{baseUrl}}/api/students/{{studentId}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "students",
+                "{{studentId}}"
+              ]
             }
-          }
+          },
+          "response": []
         },
         {
           "name": "6. Get Students By Course",
@@ -149,10 +173,18 @@
             ],
             "url": {
               "raw": "{{baseUrl}}/api/students/course/Computer Science",
-              "host": ["{{baseUrl}}"],
-              "path": ["api", "students", "course", "Computer Science"]
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "students",
+                "course",
+                "Computer Science"
+              ]
             }
-          }
+          },
+          "response": []
         },
         {
           "name": "7. Get All Distinct Courses",
@@ -166,10 +198,17 @@
             ],
             "url": {
               "raw": "{{baseUrl}}/api/students/courses",
-              "host": ["{{baseUrl}}"],
-              "path": ["api", "students", "courses"]
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "students",
+                "courses"
+              ]
             }
-          }
+          },
+          "response": []
         }
       ]
     },
@@ -178,6 +217,17 @@
       "item": [
         {
           "name": "Error 404 - Student Not Found",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status code is 404\", function () {\n    pm.response.to.have.status(404);\n});\n\npm.test(\"Error body says Not Found\", function () {\n    const json = pm.response.json();\n    pm.expect(json.status).to.eql(404);\n    pm.expect(json.error).to.eql(\"Not Found\");\n    pm.expect(json.message).to.include(\"Student not found\");\n});"
+                ]
+              }
+            }
+          ],
           "request": {
             "method": "GET",
             "header": [
@@ -188,10 +238,17 @@
             ],
             "url": {
               "raw": "{{baseUrl}}/api/students/99999",
-              "host": ["{{baseUrl}}"],
-              "path": ["api", "students", "99999"]
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "students",
+                "99999"
+              ]
             }
-          }
+          },
+          "response": []
         },
         {
           "name": "Error 400 - Validation Failed (Empty Name & Bad Email)",
@@ -209,14 +266,25 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"name\": \"\",\n  \"email\": \"not-a-valid-email\",\n  \"course\": \"\",\n  \"age\": 150\n}"
+              "raw": "{\"name\":\"\",\"email\":\"not-an-email\",\"course\":\"Computer Science\",\"age\":20}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
             },
             "url": {
               "raw": "{{baseUrl}}/api/students",
-              "host": ["{{baseUrl}}"],
-              "path": ["api", "students"]
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "students"
+              ]
             }
-          }
+          },
+          "response": []
         },
         {
           "name": "Error 409 - Duplicate Email",
@@ -234,14 +302,25 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"name\": \"Duplicate User\",\n  \"email\": \"alex.chen@example.com\",\n  \"course\": \"Computer Science\",\n  \"age\": 22\n}"
+              "raw": "{\"name\":\"Duplicate Check\",\"email\":\"alex.chen@example.com\",\"course\":\"Computer Science\",\"age\":22}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
             },
             "url": {
               "raw": "{{baseUrl}}/api/students",
-              "host": ["{{baseUrl}}"],
-              "path": ["api", "students"]
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "students"
+              ]
             }
-          }
+          },
+          "response": []
         },
         {
           "name": "Error 401 - Unauthorized Access (No Auth)",
@@ -258,12 +337,51 @@
             ],
             "url": {
               "raw": "{{baseUrl}}/api/students",
-              "host": ["{{baseUrl}}"],
-              "path": ["api", "students"]
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "students"
+              ]
             }
-          }
+          },
+          "response": []
         }
       ]
+    }
+  ],
+  "auth": {
+    "type": "basic",
+    "basic": [
+      {
+        "key": "username",
+        "value": "{{adminUsername}}",
+        "type": "string"
+      },
+      {
+        "key": "password",
+        "value": "{{adminPassword}}",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:8080"
+    },
+    {
+      "key": "adminUsername",
+      "value": "admin"
+    },
+    {
+      "key": "adminPassword",
+      "value": "admin123"
+    },
+    {
+      "key": "studentId",
+      "value": ""
     }
   ]
 }
