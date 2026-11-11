@@ -6,3 +6,4 @@ public class DuplicateEmailException extends RuntimeException {
         super("A student with email '" + email + "' already exists");
     }
 }
+
