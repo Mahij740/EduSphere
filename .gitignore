@@ -34,7 +34,7 @@ build/
 *.log
 logs/
 .env
-.env.local
+.env.*
 
 ### OS Specific ###
 .DS_Store
