@@ -22,3 +22,5 @@ public interface StudentRepository extends JpaRepository<Student, Long> {
     @Query("SELECT DISTINCT s.course FROM Student s ORDER BY s.course ASC")
     List<String> findDistinctCourses();
 }
+
+
