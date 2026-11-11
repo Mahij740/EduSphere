@@ -28,3 +28,5 @@ public class AdminDetailsService implements UserDetailsService {
                 .orElseThrow(() -> new UsernameNotFoundException("Admin not found with username: " + username));
     }
 }
+
+
