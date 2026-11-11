@@ -1,5 +1,6 @@
 package com.example.studentmanagement.entity;
 
+
 import jakarta.persistence.*;
 import jakarta.validation.constraints.*;
 import lombok.*;
