@@ -3,6 +3,7 @@ package com.example.studentmanagement.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
+
 @Entity
 @Table(name = "admins")
 @Getter
@@ -22,3 +23,4 @@ public class Admin {
     @Column(nullable = false)
     private String password;
 }
+
