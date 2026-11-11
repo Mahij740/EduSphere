@@ -1,6 +1,6 @@
 /**
  * EduSphere - Add Student Page JavaScript
- * Searchable Course Dropdown with Dynamic Creation, Form Validation & Submission
+ * Searchable Course Dropdown with Dynamic Creation, Form Validation & Submissions
  */
 
 const PRESET_COURSES = [
