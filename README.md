@@ -134,6 +134,48 @@ A complete Postman test collection is located at:
    - `adminPassword`: `admin123`
 3. It includes requests for all 6 core endpoints, courses list, and error scenarios (`401 Unauthorized`, `404 Not Found`, `400 Validation`, `409 Conflict`).
 
-### Postman Screenshots Placeholder
-<!-- Add your Postman test run execution screenshots here -->
-*(Screenshots can be added here showing test results for GET, POST, PUT, DELETE, and 401 response)*
+---
+
+## 📸 Screenshots
+
+### REST API – Postman
+
+| Screenshot | Description |
+| :--- | :--- |
+| ![GET all students](screenshots/01-get-all-students.png) | `GET /api/students` – Retrieve all student records |
+| ![GET by ID](screenshots/02-get-student-by-id.png) | `GET /api/students/{id}` – Single student lookup |
+| ![POST create student](screenshots/03-create-student.png) | `POST /api/students` – Create a new student (201 Created) |
+| ![PUT update student](screenshots/04-update-student.png) | `PUT /api/students/{id}` – Update student details |
+| ![DELETE student](screenshots/05-delete-student.png) | `DELETE /api/students/{id}` – Delete student (204 No Content) |
+| ![GET by course](screenshots/06-get-by-course.png) | `GET /api/students/course/{course}` – Filter by course |
+| ![GET distinct courses](screenshots/07-get-distinct-courses.png) | `GET /api/students/courses` – List all distinct courses |
+| ![404 Not Found](screenshots/08-error-404-not-found.png) | Error – 404 Not Found response |
+| ![400 Validation](screenshots/09-error-400-validation.png) | Error – 400 Bad Request with field-level messages |
+| ![409 Conflict](screenshots/10-error-409-duplicate.png) | Error – 409 Conflict (duplicate email) |
+| ![401 Unauthorized](screenshots/11-error-401-unauthorized.png) | Error – 401 Unauthorized (no credentials) |
+
+### Web Dashboard
+
+| Screenshot | Description |
+| :--- | :--- |
+| ![Login page](screenshots/12-ui-login.png) | Admin login page |
+| ![Welcome dashboard](screenshots/13-ui-dashboard.png) | Welcome dashboard with live metrics |
+| ![Student directory](screenshots/14-ui-students-directory.png) | Student directory with search, sort & pagination |
+| ![Add student form](screenshots/15-ui-add-student.png) | Add Student form with validation |
+
+### Database
+
+| Screenshot | Description |
+| :--- | :--- |
+| ![MySQL students table](screenshots/16-mysql-students-table.png) | MySQL `students` table with seeded records |
+| ![MySQL table structure](screenshots/17-mysql-table-structure.png) | MySQL table structure / schema |
+
+---
+
+## 👨‍💻 Author
+
+**Mahi Jain**
+
+---
+
+*EduSphere – built as a course assignment using Spring Boot, Spring Security, Spring Data JPA, and MySQL.*
