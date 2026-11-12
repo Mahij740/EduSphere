@@ -1,5 +1,5 @@
 /**
- * EduSphere - Students Directory JavaScript
+ * EduSphere - Students Directory JavaScript 
  * Filtering, Search, Sorting, Pagination, Edit/Delete Modals
  */
 
