@@ -1,6 +1,6 @@
 /**
  * EduSphere - Shared Application JavaScript
- * Global Auth, Fetch Wrapper, Toast Notifications & Layout Management
+ * Global Auth, Fetch Wrapper, Toast Notifications & Layout Management 
  */
 
 // Initialize when DOM is ready
